@@ -1,0 +1,178 @@
+/* o asterisco significa que as características serão atribuídas ao html inteiro */
+* {
+    /* padding e margin já tem um espaço pré-estabelecido, por isso estão zerados, pra que não some*/
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: #ffffff;
+    font-family: 'Rokkitt', serif;
+}
+
+ul {
+    list-style: none;
+    font-size: 20px;
+    font-style: italic;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+body {
+    /* background-image: url(./pexels-daniel-putzer-633409.jpg);
+    background-repeat: no-repeat;
+    background-position: center center fixed; 
+    forma destrinchada de escrever o código. Para economizar código, fazer da forma abaixo: */
+    background: url(./pexels-daniel-putzer-633409.jpg) no-repeat center center fixed;
+    background-size: cover;
+}  
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    /*primeiro digita a espessura da borda, em seguida o estilo e por último a cor*/
+    /* border-bottom: 2px solid #ffffff;*/
+    /* primeiro a largura da cor, em seguida o offset horizontal, offset vertical e por último a sombra */
+    box-shadow: 1px 1px 10px 1px #ffffff; 
+    margin-bottom: 100px;
+}
+
+header ul {
+    display: flex;
+}
+
+header ul li {
+    padding: 5px;
+}
+
+header ul li a {
+    transition: 400ms;
+}
+
+header ul li a:hover {
+    color: #008000;
+    text-decoration: underline;
+}
+
+
+.container {
+    text-align: center;
+}
+
+.container .name h1 {
+    font-size: 60px;
+}
+
+.container .name h5 {
+    font-size: 27px;
+}
+
+.container #about p {
+    margin-top: 40px;
+    font-size: 17px;
+}
+
+#arrow {
+    font-size: 35px;
+    cursor: pointer;
+    animation: blink 1s steps(5, start) infinite;
+    margin-top: 10px;
+}
+
+/* É preciso inserir o keyframes para "chamar" a animação de piscar (blink) */
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
+
+#animation {
+    transition: 300ms;
+}
+
+/* Nãe existe função nativa no css para rotacionar um objeto, então será necessário inserir uma classe para que, quando 
+clicado, gere uma ação no JS. */
+.rotate {
+    transform: rotate(180deg);
+    transition: 300ms;
+}
+
+.active {
+    display: block !important;
+}
+
+#about p {
+    max-width: 700px;
+    margin: 0 auto;
+    border: 1px solid #ffffff;
+    background-color: #ffffff; 
+    opacity: 0.85;
+    color: #000000 !important;
+}
+
+.form {
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 70px;
+    font-size: 19px;
+}
+.form p {
+    color: #7f7f7f;
+    font-weight: 600;
+}
+
+.form input {
+    width: 50%;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px 0px 0px 5px;
+    color:black;
+    font-size: 15px;
+}
+
+.form button {
+    width: 15%;
+    padding: 5px 10px;
+    background: linear-gradient(to right, #9ACD32 50%, #008000 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    color: #ffffff;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 300ms ease-out;
+    border-radius: 0px 5px 5px 0px;
+    margin-top: 20px;
+    margin-left: -5px;
+    font-size: 15px;
+}
+
+.form button:hover {
+    background-position: left bottom;
+    color: #1C1C1C;
+}
+
+@media only screen and (max-width: 768px) {
+    .form {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .container .name h1 {
+        font-size: 30px;
+    }
+
+    .container .name h5 {
+        font-size: 15px;
+    }
+
+    #about p {
+        max-width: 80%;
+        text-align: justify;
+    }
+
+}
